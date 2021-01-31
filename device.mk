@@ -40,7 +40,9 @@ PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl.7870 \
     android.hardware.bluetooth@1.0-service \
-    libbt-vendor
+    libbt-vendor \
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/bluetooth/bt_vendor.conf:vendor/etc/bluetooth/bt_vendor.conf
