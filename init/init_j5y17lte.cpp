@@ -95,7 +95,7 @@ void vendor_load_properties()
     } else if (bootloader.find("J530G") == 0) {
     /* SM-J530G */
         property_override_quad("ro.product.model", "ro.product.odm.model", "ro.product.system.model", "ro.product.vendor.model", "SM-J530G");
-        property_override_quad("ro.product.name", "ro.product.odm.name", "ro.product.system.name", "ro.product.vendor.name", "j5y17lte");
+        property_override_quad("ro.product.name", "ro.product.odm.name", "ro.product.system.name", "ro.product.vendor.name", "j5y17lteub");
 
         init_dsds();
 
