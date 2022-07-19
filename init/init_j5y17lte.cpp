@@ -36,11 +36,8 @@
 #include <android-base/logging.h>
 
 #include "vendor_init.h"
-#include "property_service.h"
-
-using android::base::GetProperty;
-using android::init::property_set;
-
+using ::android::base::GetProperty;
+using ::android::base::SetProperty;
 void property_override(const std::string& name, const std::string& value)
 {
     size_t valuelen = value.size();
@@ -73,16 +70,15 @@ void property_override_quad(const std::string& boot_prop, const std::string& pro
 }
 
 void init_dsds() {
-    property_set("ro.vendor.multisim.set_audio_params", "true");
-    property_set("ro.vendor.multisim.simslotcount", "2");
-    property_set("persist.radio.multisim.config", "dsds");
+    SetProperty("ro.vendor.multisim.set_audio_params", "true");
+    SetProperty("ro.vendor.multisim.simslotcount", "2");
+    SetProperty("persist.radio.multisim.config", "dsds");
 }
 
 void vendor_load_properties()
 {
     // Init a dummy BT MAC address, will be overwritten later
-    property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
-
+    SetProperty("ro.boot.btmacaddr", "00:00:00:00:00:00");
     std::string bootloader = GetProperty("ro.bootloader","");
 
     if (bootloader.find("J530FX") == 0) {
